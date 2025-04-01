@@ -113,11 +113,7 @@ window.addEventListener('message', function (event) {
 
 window.addEventListener("keydown", function (e) {
     if (e.keyCode == 27) {
-        $('body').fadeOut(50);
-        setTimeout(() => {
-            $('.modal').removeClass('modal_show');
-            $('.modal').addClass('hidden');
-            $('.task').addClass('hidden');
-        }, 250)
+      clearTimeout(distributorTimer);
+      EndTask(false);
     }
 })
